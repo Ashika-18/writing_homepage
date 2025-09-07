@@ -1,3 +1,5 @@
+// main.js
+
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", async (e) => {
