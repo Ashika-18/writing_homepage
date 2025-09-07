@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #f4f9ff;
+  background-color: #f9fafb; /* 柔らかい背景 */
   color: #333;
 }
 
@@ -62,7 +62,7 @@ header p {
 .card-content h3 {
   margin-top: 0;
   font-size: 1.2rem;
-  color: #1e3a8a;
+  color: #2f4f4f; /* 見出しはフォレストグリーンで統一 */
 }
 
 .card-content p {
@@ -73,17 +73,18 @@ header p {
 .card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #2563eb;
+  color: #e07a5f; /* 焚き火オレンジ */
   text-decoration: none;
   font-weight: bold;
 }
 
 .card a:hover {
   text-decoration: underline;
+  color: #c45d3d; /* 濃いめオレンジ */
 }
 
 footer {
-  background-color: #1e3a8a;
+  background-color: #2f4f4f; /* 統一感を持たせる */
   color: white;
   text-align: center;
   padding: 1rem;
@@ -112,7 +113,7 @@ form button {
 }
 
 form button {
-  background-color: #2563eb;
+  background-color: #e07a5f;
   color: white;
   border: none;
   cursor: pointer;
@@ -120,7 +121,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #1e40af;
+  background-color: #c45d3d;
 }
 
 nav ul {
@@ -173,7 +174,7 @@ nav a:hover {
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: #2563eb;
+  background: #e07a5f;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -182,5 +183,5 @@ nav a:hover {
 }
 
 .btn:hover {
-  background: #1e40af;
+  background: #c45d3d;
 }
