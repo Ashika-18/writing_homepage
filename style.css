@@ -5,22 +5,60 @@ body {
   color: #333;
 }
 
+/* ---------- HEADER / FIRSTVIEW ---------- */
 header {
   position: relative;
-  height: 80vh;
+  height: 80vh; /* ファーストビューの高さ */
   background: url("images/first_view.jpg") no-repeat center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: white;
-  text-align: center;
 }
 
+/* ナビゲーション */
+header nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-around; /* ← これで均等配置 */
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%; /* ulの幅を広げる */
+}
+
+header nav ul li {
+  flex: 1; /* liを均等に伸ばす */
+  text-align: center; /* 文字を中央寄せ */
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #93c5fd; /* ホバーで淡いブルー */
+}
+
+/* overlay部分（中央のキャッチコピー） */
 header .overlay {
-  background: rgba(0, 0, 0, 0.4); /* 画像の上に半透明の黒をかける */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
   padding: 2rem;
   border-radius: 12px;
+  text-align: center;
 }
 
 header h1 {
@@ -33,6 +71,47 @@ header p {
   margin-bottom: 1.5rem;
 }
 
+/* about me*/
+/* About Me セクション */
+.about {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.95)
+    ),
+    url("images/about_bg.jpg") no-repeat center/cover; /* 背景画像 */
+  padding: 6rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+  max-width: 1000px;
+  position: relative;
+}
+
+.about h2 {
+  color: #2f4f4f; /* フォレストグリーン */
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.8;
+}
+
+.about p::before {
+  content: "🌲 "; /* アウトドア感のあるアイコン */
+}
+
+.about p::after {
+  content: " ✨";
+}
+
+/* ---------- PORTFOLIO / HERO ---------- */
 .hero h2 {
   margin: 0 0 1rem;
   font-size: 2rem;
@@ -94,14 +173,7 @@ header p {
   color: #c45d3d; /* 濃いめオレンジ */
 }
 
-footer {
-  background-color: #2f4f4f; /* 統一感を持たせる */
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
+/* ---------- FORM ---------- */
 form {
   display: flex;
   flex-direction: column;
@@ -135,26 +207,16 @@ form button:hover {
   background-color: #c45d3d;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-nav a {
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #2f4f4f; /* 統一感を持たせる */
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-nav a:hover {
-  color: #93c5fd; /* 薄いブルーでホバー */
-}
-
+/* ---------- BUTTON ---------- */
 .btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
