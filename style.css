@@ -6,20 +6,31 @@ body {
 }
 
 header {
-  background-color: #2f4f4f; /* 深いフォレストグリーン */
+  position: relative;
+  height: 80vh;
+  background: url("images/first_view.jpg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: white;
-  padding: 1rem 2rem;
   text-align: center;
 }
 
+header .overlay {
+  background: rgba(0, 0, 0, 0.4); /* 画像の上に半透明の黒をかける */
+  padding: 2rem;
+  border-radius: 12px;
+}
+
 header h1 {
-  margin: 0;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 header p {
-  margin: 0.5rem 0 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero h2 {
@@ -142,33 +153,6 @@ nav a {
 
 nav a:hover {
   color: #93c5fd; /* 薄いブルーでホバー */
-}
-
-.firstview {
-  position: relative;
-  height: 80vh;
-  background: url("images/first_view.jpg") no-repeat center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-
-.firstview .overlay {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.firstview h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.firstview p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
 }
 
 .btn {
