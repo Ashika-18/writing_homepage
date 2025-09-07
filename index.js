@@ -23,7 +23,7 @@ const client = new SMTPClient({
   password: process.env.EMAIL_PASS,
   host: "smtp.office365.com",
   port: 587,
-  tsl: true,
+  tls: true,
 });
 
 // フォーム送信ルート
