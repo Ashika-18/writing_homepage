@@ -1,41 +1,36 @@
-require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const { SMTPClient } = require("emailjs");
+import express from "express";
+import { SMTPClient } from "emailjs";
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-const client = new SMTPClient({
-  user: process.env.EMAIL_USER,
-  password: process.env.EMAIL_PASS,
-  host: "smtp.office365.com",
-  ssl: false,
-  tls: true,
-});
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.post("/send", async (req, res) => {
   const { name, email, message } = req.body;
 
+  const client = new SMTPClient({
+    user: process.env.EMAIL_USER,
+    password: process.env.EMAIL_PASS,
+    host: "smtp.office365.com",
+    ssl: true,
+  });
+
   try {
     await client.sendAsync({
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      text: `From: ${name} <${email}>\n\n${message}`,
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: "お問い合わせフォームからのメッセージ",
+      subject: "お問い合わせ",
     });
-    res.json({ success: true, message: "送信完了しました！" });
+    res.send("メール送信成功");
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, message: "送信に失敗しました。" });
+    res.status(500).send("送信失敗");
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
