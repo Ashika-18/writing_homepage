@@ -22,13 +22,6 @@ header p {
   font-size: 1rem;
 }
 
-.hero {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
 .hero h2 {
   margin: 0 0 1rem;
   font-size: 2rem;
