@@ -2,7 +2,7 @@
 .env
 
 # Node modules
-nodemodules/
+node_modules/
 
 # VScode
 .vscode/
