@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashika Writing Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      // EmailJS 初期化（Public Key を設定）
+      (function () {
+        emailjs.init("ByFt4jDu5sGL02O8C"); // ←ここにあなたのPublic Key
+      })();
+    </script>
   </head>
   <body>
     <header>
@@ -19,7 +28,8 @@
       <div class="overlay">
         <h1>Ashika Writing Portfolio</h1>
         <p>
-          伝える力で、人と世界をつなぐ<br />アウトドアや体験記事を中心に、読者に届く文章を書きます。
+          伝える力で、人と世界をつなぐ<br />
+          アウトドアや体験記事を中心に、読者に届く文章を書きます。
         </p>
       </div>
     </header>
@@ -72,11 +82,10 @@
             <a href="#">記事を読む</a>
           </div>
         </div>
-        <!-- 追加カードもここに入れられます -->
       </div>
     </section>
 
-    <section>
+    <section id="contact">
       <form id="contactForm">
         <input type="text" name="name" placeholder="お名前" required />
         <input
@@ -89,6 +98,7 @@
           name="message"
           rows="5"
           placeholder="お問い合わせ内容"
+          required
         ></textarea>
         <button type="submit">送信</button>
       </form>
