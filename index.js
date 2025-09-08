@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
+/* index.js */
 import { SMTPClient } from "emailjs";
 
 const __filename = fileURLToPath(import.meta.url);

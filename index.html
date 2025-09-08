@@ -78,10 +78,18 @@
 
     <section>
       <form id="contactForm">
-        <h3>お問い合わせ</h3>
-        <input type="text" placeholder="お名前" required />
-        <input type="email" placeholder="メールアドレス" required />
-        <textarea rows="5" placeholder="お問い合わせ内容"></textarea>
+        <input type="text" name="name" placeholder="お名前" required />
+        <input
+          type="email"
+          name="email"
+          placeholder="メールアドレス"
+          required
+        />
+        <textarea
+          name="message"
+          rows="5"
+          placeholder="お問い合わせ内容"
+        ></textarea>
         <button type="submit">送信</button>
       </form>
     </section>
