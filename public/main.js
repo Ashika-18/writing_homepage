@@ -1,17 +1,19 @@
-// フォーム取得
+// main.js
 const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // ページリロード防止
+// EmailJS 初期化
+emailjs.init("ByFt4jDu5sGL02O8C"); // ← EmailJSのPublic Keyをここに
 
-  // EmailJS 送信
-  emailjs.sendForm("service_48qdz9d", "template_vtde22k", this).then(
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_ad3k7fl", "ByFt4jDu5sGL02O8C", this).then(
     function () {
       alert("送信が完了しました！");
-      form.reset(); // フォームをリセット
+      form.reset();
     },
     function (error) {
-      alert("送信に失敗しました…\n" + JSON.stringify(error));
+      alert("送信に失敗しました: " + JSON.stringify(error));
       console.error("送信エラー:", error);
     }
   );
