@@ -7,7 +7,7 @@ emailjs.init("ByFt4jDu5sGL02O8C"); // ← EmailJSのPublic Keyをここに
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  emailjs.sendForm("service_ad3k7fl", "ByFt4jDu5sGL02O8C", this).then(
+  emailjs.sendForm("service_ad3k7fl", "template_vtde22k", this).then(
     function () {
       alert("送信が完了しました！");
       form.reset();
