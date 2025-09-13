@@ -1,5 +1,4 @@
 /* articles.css */
-/* articles.css */
 
 /* 全体設定 */
 body {
@@ -107,4 +106,24 @@ a:hover {
   section h3 {
     font-size: 1.2rem;
   }
+}
+
+/* トップページに戻るボタン */
+.back-to-index {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.back-to-index a {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-index a:hover {
+  background-color: #138032; /* 少し濃い緑に変化 */
 }
