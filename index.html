@@ -1,4 +1,4 @@
-<!--index.html-->>
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashika Writing Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-      // EmailJS 初期化（Public Key を設定）
-      (function () {
-        emailjs.init("ByFt4jDu5sGL02O8C"); // ←ここにあなたのPublic Key
-      })();
-    </script>
   </head>
   <body>
     <header>
@@ -84,7 +75,12 @@
     </section>
 
     <section id="contact">
-      <form id="contactForm">
+      <p>お問い合わせはこちらから。</p>
+      <form
+        id="contactForm"
+        action="https://formspree.io/f/xpwjbzyq"
+        method="POST"
+      >
         <input type="text" name="name" placeholder="お名前" required />
         <input
           type="email"
@@ -100,6 +96,12 @@
         ></textarea>
         <button type="submit">送信</button>
       </form>
+      <p
+        id="formMessage"
+        style="display: none; color: green; font-weight: bold"
+      >
+        送信ありがとうございました！
+      </p>
     </section>
 
     <footer>

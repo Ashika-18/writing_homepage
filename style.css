@@ -1,27 +1,28 @@
 /* style.css */
+
+/* ---------- 基本 ---------- */
 body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #f9fafb; /* 柔らかい背景 */
+  background-color: #f9fafb;
   color: #333;
 }
 
 /* ---------- HEADER / FIRSTVIEW ---------- */
 header {
   position: relative;
-  height: 80vh; /* ファーストビューの高さ */
+  height: 80vh;
   background: url("images/first_view.jpg") no-repeat center/cover;
   color: white;
 }
 
-/* ナビゲーション */
 header nav {
   position: absolute;
   top: 0;
   width: 100%;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-around; /* ← これで均等配置 */
+  justify-content: space-around;
   background: rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
@@ -31,12 +32,12 @@ header nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  width: 100%; /* ulの幅を広げる */
+  width: 100%;
 }
 
 header nav ul li {
-  flex: 1; /* liを均等に伸ばす */
-  text-align: center; /* 文字を中央寄せ */
+  flex: 1;
+  text-align: center;
 }
 
 header nav a {
@@ -47,10 +48,9 @@ header nav a {
 }
 
 header nav a:hover {
-  color: #93c5fd; /* ホバーで淡いブルー */
+  color: #93c5fd;
 }
 
-/* overlay部分（中央のキャッチコピー） */
 header .overlay {
   position: absolute;
   top: 50%;
@@ -72,25 +72,23 @@ header p {
   margin-bottom: 1.5rem;
 }
 
-/* about me*/
-/* About Me セクション */
+/* ---------- ABOUT ---------- */
 .about {
   background: linear-gradient(
       rgba(255, 255, 255, 0.95),
       rgba(255, 255, 255, 0.95)
     ),
-    url("images/about_bg.jpg") no-repeat center/cover; /* 背景画像 */
+    url("images/about_bg.jpg") no-repeat center/cover;
   padding: 6rem 2rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   margin: 3rem auto;
   max-width: 1000px;
-  position: relative;
 }
 
 .about h2 {
-  color: #2f4f4f; /* フォレストグリーン */
+  color: #2f4f4f;
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
   letter-spacing: 1px;
@@ -105,19 +103,14 @@ header p {
 }
 
 .about p::before {
-  content: "🌲 "; /* アウトドア感のあるアイコン */
+  content: "🌲 ";
 }
 
 .about p::after {
   content: " ✨";
 }
 
-/* ---------- PORTFOLIO / HERO ---------- */
-.hero h2 {
-  margin: 0 0 1rem;
-  font-size: 2rem;
-}
-
+/* ---------- PORTFOLIO ---------- */
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -153,7 +146,7 @@ header p {
 .card-content h3 {
   margin-top: 0;
   font-size: 1.2rem;
-  color: #2f4f4f; /* 見出しはフォレストグリーンで統一 */
+  color: #2f4f4f;
 }
 
 .card-content p {
@@ -164,14 +157,14 @@ header p {
 .card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #e07a5f; /* 焚き火オレンジ */
+  color: #e07a5f;
   text-decoration: none;
   font-weight: bold;
 }
 
 .card a:hover {
   text-decoration: underline;
-  color: #c45d3d; /* 濃いめオレンジ */
+  color: #c45d3d;
 }
 
 /* ---------- FORM ---------- */
@@ -208,9 +201,17 @@ form button:hover {
   background-color: #c45d3d;
 }
 
+#formMessage {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #16a34a;
+  margin-top: 1rem;
+}
+
 /* ---------- FOOTER ---------- */
 footer {
-  background-color: #2f4f4f; /* 統一感を持たせる */
+  background-color: #2f4f4f;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -231,4 +232,118 @@ footer {
 
 .btn:hover {
   background: #c45d3d;
+}
+
+/* ---------- MEDIA QUERIES / RESPONSIVE ---------- */
+@media screen and (max-width: 768px) {
+  header {
+    height: 60vh;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  header nav ul {
+    flex-direction: column;
+  }
+
+  header nav ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .about {
+    padding: 4rem 1rem;
+  }
+
+  .portfolio {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  form {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .about h2 {
+    font-size: 1.8rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- HAMBURGER MENU ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 25px;
+  height: 20px;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* ナビリンクの初期状態 */
+#nav-links {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    width: 200px;
+    display: none; /* 初期非表示 */
+    border-radius: 0 0 8px 8px;
+  }
+
+  #nav-links li {
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  #nav-links li a {
+    color: white;
+    font-size: 1.1rem;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
 }
