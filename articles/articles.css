@@ -1,0 +1,110 @@
+/* articles.css */
+/* articles.css */
+
+/* 全体設定 */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #ffffff; /* 白背景 */
+  color: #111111;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+.article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 記事ヘッダー */
+article header h1 {
+  color: #16a34a; /* テーマカラー */
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* セクション見出し */
+section h2 {
+  color: #16a34a;
+  font-size: 2rem;
+  border-left: 5px solid #16a34a;
+  padding-left: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+section h3 {
+  color: #111111;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+section h4 {
+  color: #16a34a;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+/* 本文 */
+p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* リストスタイル */
+ul,
+ol {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* 強調テキスト */
+strong {
+  color: #16a34a;
+}
+
+/* セクションごとの背景色・パディング */
+section {
+  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 最後のまとめ */
+section:last-of-type {
+  border-bottom: none;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+/* リンクスタイル */
+a {
+  color: #16a34a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  article header h1 {
+    font-size: 2rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  section h3 {
+    font-size: 1.2rem;
+  }
+}
