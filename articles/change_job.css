@@ -1,0 +1,124 @@
+/* change_job.css */
+/* ベースのフォントと背景 */
+body {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #333; /* 濃いめのグレーで見やすく */
+  line-height: 1.7; /* 読みやすい行の高さ */
+  background-color: #f4f8f4; /* 薄い緑がかったオフホワイト */
+  margin: 0;
+  padding: 0;
+}
+
+/* メインコンテンツの幅と中央寄せ */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff; /* コンテンツ部分は白 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* ほんの少し影 */
+  border-radius: 8px;
+}
+
+/* 緑色を基調としたカラーパレット */
+:root {
+  --color-main-green: #38761d; /* 深い森の緑（メインカラー） */
+  --color-light-green: #6aa84f; /* 葉っぱの緑（アクセント） */
+  --color-background-green: #e9f0e6; /* 薄い背景色 */
+  --color-border-green: #b6d7a8; /* ボーダーの色 */
+}
+
+/* ヘッダー */
+header {
+  background-color: var(--color-main-green);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* 大見出し (h2) - 記事の主要な区切り */
+h2 {
+  font-size: 24px;
+  color: var(--color-main-green);
+  border-bottom: 3px solid var(--color-light-green); /* 下線にアクセントカラー */
+  padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+/* 中見出し (h3) - セクション内の小見出し */
+h3 {
+  font-size: 20px;
+  color: #333;
+  border-left: 5px solid var(--color-light-green); /* 左側に縦線 */
+  padding-left: 10px;
+  margin-top: 30px;
+}
+
+/* 小見出し (h4) */
+h4 {
+  font-size: 18px;
+  color: var(--color-main-green);
+  margin-top: 25px;
+}
+
+/* 段落 */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* 箇条書きと番号付きリスト */
+ol,
+ul {
+  padding-left: 25px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* リスト内の h3 */
+ol h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border: none; /* ol内のh3は左線を解除 */
+  padding-left: 0;
+  color: #333;
+}
+
+/* 強調文字 */
+strong {
+  color: var(--color-main-green);
+  font-weight: bold;
+}
+
+/* 読者へのメッセージやポイントを囲む部分 */
+#summary h4,
+#summary ol {
+  background-color: var(--color-background-green);
+  border: 1px solid var(--color-border-green);
+  padding: 15px;
+  border-radius: 5px;
+}
+#summary ol {
+  list-style-type: none; /* リストマークを消す */
+  padding-left: 0;
+}
+#summary li {
+  padding-left: 1.2em;
+  text-indent: -1.2em; /* 箇条書きマーク代わりに数字を左寄せ */
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 840px) {
+  main {
+    margin: 20px 10px;
+    padding: 15px;
+  }
+}
