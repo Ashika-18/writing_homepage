@@ -78,22 +78,41 @@
         id="contactForm"
         action="https://formspree.io/f/xpwjbzyq"
         method="POST"
+        novalidate
       >
-        <input type="text" name="name" placeholder="お名前" required />
+        <!-- お名前 -->
+        <input
+          type="text"
+          name="name"
+          placeholder="お名前（必須）"
+          required
+          minlength="2"
+          title="2文字以上で入力してください"
+        />
+
+        <!-- メール -->
         <input
           type="email"
           name="email"
-          placeholder="メールアドレス"
+          placeholder="メールアドレス（必須）"
           required
+          pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$"
+          title="正しいメールアドレスを入力してください"
         />
+
+        <!-- お問い合わせ内容 -->
         <textarea
           name="message"
           rows="5"
-          placeholder="お問い合わせ内容"
+          placeholder="お問い合わせ内容（必須）"
           required
+          minlength="10"
+          title="10文字以上で入力してください"
         ></textarea>
+
         <button type="submit">送信</button>
       </form>
+
       <p
         id="formMessage"
         style="display: none; color: green; font-weight: bold"
